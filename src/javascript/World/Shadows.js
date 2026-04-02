@@ -17,7 +17,7 @@ export default class Shadows
         this.maxDistance = 3
         this.distancePower = 2
         this.zFightingDistance = 0.001
-        this.color = '#d04500'
+        this.color = '#4a148c'
         this.wireframeVisible = false
         this.items = []
 

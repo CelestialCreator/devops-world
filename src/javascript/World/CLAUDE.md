@@ -7,5 +7,8 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #5570 | 7:40 PM | ✅ | Changed global indirect lighting color from orange to purple | ~481 |
+| #5569 | 7:39 PM | ✅ | Portfolio floor gradient changed from orange to purple theme | ~405 |
+| #5502 | 4:31 PM | 🔴 | Disabled geometry merging for keepMaterial objects to prevent material loss | ~436 |
 | #5494 | 4:22 PM | 🟣 | Objects.js now supports keepMaterial option to preserve original model materials | ~416 |
 </claude-mem-context>

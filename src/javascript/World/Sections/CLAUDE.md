@@ -7,6 +7,33 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #5575 | 7:54 PM | 🔴 | Fixed Transit Hub metro train rotation and elevation for natural orbital animation | ~448 |
+| #5574 | 7:52 PM | ✅ | Metro train animation moved from floating hover to ground-level orbit | ~352 |
+| #5573 | 7:46 PM | 🟣 | Added animated Mumbai Metro train orbiting Transit Hub section | ~529 |
+| #5572 | 7:45 PM | 🟣 | Transit Hub section prepared for animated metro train | ~270 |
+| #5557 | 6:33 PM | 🔄 | Replaced CNCF tool box compositions with logo texture tiles in Cloud Kingdom | ~628 |
+| #5556 | 6:32 PM | ✅ | CloudSection.js granted access to resources for logo texture integration | ~358 |
+| #5548 | 6:08 PM | 🟣 | Added animation infrastructure to Cloud Kingdom section for ArgoCD octopus mascot | ~394 |
+| #5547 | 6:06 PM | 🟣 | Cloud Kingdom redesigned with CNCF tool mascots and logos using box primitives | ~625 |
+| #5543 | 6:01 PM | 🟣 | Enhanced Cloud Kingdom section with Kubernetes-themed objects and multi-part compositions | ~566 |
+| #5541 | 5:50 PM | ✅ | Updated Finance District QA panel to feature Zosma-QA unified testing framework | ~493 |
+| #5540 | " | ✅ | Updated AI Research Lab content with actual GPU Lab and OpenZosma project details | ~631 |
+| #5539 | 5:49 PM | ✅ | Cloud Kingdom info panels refactored to emphasize professional cloud-native expertise | ~508 |
+| #5534 | 5:31 PM | 🔵 | Portfolio sections document career progression across 6 themed areas with detailed text panels | ~746 |
+| #5531 | 5:22 PM | ✅ | Repositioned landmark skyscrapers in Finance District to avoid text overlap | ~366 |
+| #5530 | 5:20 PM | 🔄 | Reorganized Finance District buildings into static landmarks and pushable structures | ~495 |
+| #5527 | 5:16 PM | 🟣 | Finance District completely reimplemented with Kenney buildings and fintech-themed objects | ~579 |
+| #5523 | 5:09 PM | ✅ | Changed Transit Hub accent color from orange to bright yellow | ~373 |
+| #5522 | " | ✅ | Updated Transit Hub accent color from orange to yellow-gold | ~321 |
+| #5521 | 5:07 PM | 🟣 | Transit Hub section converted to fully interactive physics playground | ~494 |
+| #5516 | 4:53 PM | 🔄 | Simplified Transit Hub vehicles to MSRTC-themed red buses only | ~433 |
+| #5515 | " | 🔴 | Added tint option to createKenneyObject() as workaround for texture loading failure | ~388 |
+| #5514 | 4:49 PM | 🔄 | Simplified Kenney model material conversion removing vertex color detection | ~381 |
+| #5510 | 4:39 PM | 🔵 | Kenney GLB models render white due to texture path mismatch causing load failure | ~629 |
+| #5507 | 4:36 PM | ✅ | Transit Hub Kenney model scale reduced from 1.2 to 0.8 | ~364 |
+| #5505 | 4:34 PM | ✅ | Adjusted Kenney model scaling from 2.5 to 1.2 in Transit Hub | ~385 |
+| #5503 | 4:33 PM | 🔴 | Fixed createKenneyObject material conversion and Y-up to Z-up rotation | ~405 |
+| #5501 | 4:30 PM | 🔴 | Fixed Kenney model orientation with Y-up to Z-up coordinate conversion | ~470 |
 | #5498 | 4:26 PM | 🔄 | TransitSection refactored to use Kenney 3D vehicle models | ~633 |
 | #5497 | 4:24 PM | 🟣 | Added createKenneyObject() helper for GLTF models with auto-generated collision | ~484 |
 </claude-mem-context>

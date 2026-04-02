@@ -158,3 +158,4 @@ folio-2019/
 
 # Large resource files
 resources/
+.vercel
