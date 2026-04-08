@@ -37,6 +37,7 @@ export default class Application
         this.setWorld()
         this.setTitle()
         this.setThreejsJourney()
+        this.setAxon()
     }
 
     /**
@@ -277,6 +278,21 @@ export default class Application
             time: this.time,
             world: this.world
         })
+    }
+
+    /**
+     * Set Axon chat assistant
+     */
+    setAxon()
+    {
+        // Delay Axon init to avoid interfering with Three.js scene setup
+        window.setTimeout(async () =>
+        {
+            const { default: AxonChat } = await import('./Axon/AxonChat.js')
+            this.axon = new AxonChat({
+                config: this.config
+            })
+        }, 3000)
     }
 
     /**

@@ -11,6 +11,8 @@ export default class ThreejsJourney
 
         // Setup
         this.$container = document.querySelector('.js-threejs-journey')
+        if(!this.$container) return
+
         this.$messages = [...this.$container.querySelectorAll('.js-message')]
         this.$yes = this.$container.querySelector('.js-yes')
         this.$no = this.$container.querySelector('.js-no')
@@ -25,9 +27,11 @@ export default class ThreejsJourney
 
         if(this.config.debug)
             this.start()
-        
+
         if(this.prevent)
             return
+
+        if(!this.$yes || !this.$no) return
 
         this.setYesNo()
         this.setLog()

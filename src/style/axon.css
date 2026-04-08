@@ -1,0 +1,387 @@
+/* Axon Chat - AI Portfolio Assistant */
+
+.axon-chat
+{
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 10000;
+    font-family: 'Comic Neue', cursive;
+    pointer-events: auto;
+}
+
+/* Floating bubble button */
+.axon-bubble
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: #ffffff;
+    font-family: 'Comic Neue', cursive;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 20px rgba(171, 71, 188, 0.4);
+    outline: none;
+}
+
+.axon-bubble:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(171, 71, 188, 0.6);
+}
+
+.axon-bubble-icon
+{
+    font-size: 20px;
+    line-height: 1;
+}
+
+.axon-bubble.is-hidden
+{
+    display: none;
+}
+
+/* Chat panel */
+.axon-panel
+{
+    display: none;
+    flex-direction: column;
+    width: 380px;
+    max-height: 520px;
+    background: rgba(20, 10, 30, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(171, 71, 188, 0.4);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.axon-panel.is-open
+{
+    display: flex;
+}
+
+/* Header */
+.axon-header
+{
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, rgba(171, 71, 188, 0.3), rgba(123, 31, 162, 0.3));
+    border-bottom: 1px solid rgba(171, 71, 188, 0.2);
+}
+
+.axon-header-info
+{
+    flex: 1;
+}
+
+.axon-title
+{
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.axon-subtitle
+{
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-top: 2px;
+}
+
+.axon-close
+{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    font-family: 'Comic Neue', cursive;
+    outline: none;
+}
+
+.axon-close:hover
+{
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Messages area */
+.axon-messages
+{
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+    max-height: 320px;
+}
+
+.axon-messages::-webkit-scrollbar
+{
+    width: 4px;
+}
+
+.axon-messages::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+
+.axon-messages::-webkit-scrollbar-thumb
+{
+    background: rgba(171, 71, 188, 0.3);
+    border-radius: 2px;
+}
+
+/* Message bubbles */
+.axon-msg
+{
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.axon-msg.is-user
+{
+    align-self: flex-end;
+    background: rgba(171, 71, 188, 0.25);
+    border: 1px solid rgba(171, 71, 188, 0.4);
+    color: #ffffff;
+}
+
+.axon-msg.is-axon
+{
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.axon-msg.is-system
+{
+    align-self: center;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+}
+
+/* Typing indicator */
+.axon-typing
+{
+    display: flex;
+    gap: 4px;
+    padding: 10px 14px;
+    align-self: flex-start;
+}
+
+.axon-typing-dot
+{
+    width: 6px;
+    height: 6px;
+    background: rgba(171, 71, 188, 0.6);
+    border-radius: 50%;
+    animation: axonBounce 1.2s infinite;
+}
+
+.axon-typing-dot:nth-child(2)
+{
+    animation-delay: 0.2s;
+}
+
+.axon-typing-dot:nth-child(3)
+{
+    animation-delay: 0.4s;
+}
+
+@keyframes axonBounce
+{
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+}
+
+/* Loading/progress area */
+.axon-loading
+{
+    padding: 16px;
+    text-align: center;
+    display: none;
+}
+
+.axon-loading.is-active
+{
+    display: block;
+}
+
+.axon-progress-bar
+{
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.axon-progress-fill
+{
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ab47bc, #ce93d8);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.axon-progress-text
+{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Quick action buttons */
+.axon-quick-actions
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 16px 12px;
+}
+
+.axon-quick-btn
+{
+    padding: 6px 12px;
+    background: rgba(171, 71, 188, 0.15);
+    border: 1px solid rgba(171, 71, 188, 0.3);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Comic Neue', cursive;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    outline: none;
+}
+
+.axon-quick-btn:hover
+{
+    background: rgba(171, 71, 188, 0.3);
+    color: #ffffff;
+}
+
+/* Input area */
+.axon-input-row
+{
+    display: flex;
+    padding: 12px;
+    gap: 8px;
+    border-top: 1px solid rgba(171, 71, 188, 0.15);
+}
+
+.axon-input
+{
+    flex: 1;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    color: #ffffff;
+    font-family: 'Comic Neue', cursive;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.axon-input::placeholder
+{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.axon-input:focus
+{
+    border-color: rgba(171, 71, 188, 0.5);
+}
+
+.axon-send
+{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    outline: none;
+}
+
+.axon-send:hover
+{
+    transform: scale(1.08);
+}
+
+.axon-send:disabled
+{
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Fallback banner */
+.axon-fallback-banner
+{
+    padding: 6px 12px;
+    background: rgba(255, 193, 7, 0.15);
+    color: rgba(255, 193, 7, 0.8);
+    font-size: 11px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 480px)
+{
+    .axon-chat
+    {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .axon-bubble
+    {
+        margin: 0 0 12px 12px;
+    }
+
+    .axon-panel
+    {
+        width: 100%;
+        max-height: 70vh;
+        border-radius: 16px 16px 0 0;
+    }
+}
