@@ -4,10 +4,12 @@ export const FAQ_DATA = [
         answer: "Akshay Mhaskar is a DevOps Engineer and SRE based in Mumbai, India. He currently works at Billeasy as the sole DevOps contributor, scaling infrastructure for over 15 lakh daily riders across 5 metro systems and multiple bus services. He's passionate about cloud-native architectures, CNCF tools, and AI infrastructure."
     },
     {
+        id: 'experience',
         keywords: ['experience', 'work', 'career', 'history', 'years', 'background', 'resume'],
         answer: "Akshay has 8+ years of experience. Currently at Billeasy as sole DevOps engineer (since July 2025), previously DevOps at Mavonic Technology for PCI-DSS fintech (2023-2025), System Administrator at Cupshup (2021-2023), founded Square Root Consultancy doing networking and drone solutions (2018-2021), and started at SNDT University as Technical Support (2017)."
     },
     {
+        id: 'skills',
         keywords: ['skill', 'tech', 'stack', 'tools', 'technology', 'know', 'technologies', 'proficient'],
         answer: "Akshay works with AWS, GCP, Azure, Kubernetes, Docker, Helm, ArgoCD, Istio, Linkerd, Traefik, Cilium, Prometheus, Grafana, OpenTelemetry, VictoriaMetrics, Terraform, OpenTofu, Terragrunt, Crossplane, Python, Bash, and has hands-on experience with GPU infrastructure (NVIDIA CUDA, AMD ROCm), LLM deployment with vLLM, and chaos engineering with k6 and Locust."
     },
@@ -16,10 +18,12 @@ export const FAQ_DATA = [
         answer: "At Billeasy, Akshay is the sole DevOps contributor serving over 15 lakh daily riders across Mumbai, Hyderabad, Pune, Nagpur, and Noida metros plus MSRTC and other bus services. He achieved 80% egress cost reduction with Traefik behind CloudFront, leads GitOps with ArgoCD, built a full observability stack with Prometheus, Grafana, VictoriaMetrics, and OpenTelemetry, and developed an AI-powered Log Agent that significantly reduced mean time to resolution."
     },
     {
+        id: 'projects',
         keywords: ['project', 'gpu', 'lab', 'homelab', 'home', 'cluster', 'bare', 'metal', 'built', 'build'],
         answer: "Akshay's standout projects include: (1) A GPU Home Lab with a 3-node bare-metal Kubernetes cluster running RTX 3080, RTX 2070 Super, RTX 5090, and Radeon AI PRO R9700 GPUs. (2) An AI-Powered Voice Agent with self-hosted LLM/TTS on Kubernetes with SIP and WhatsApp integration. (3) A Kubernetes-Native Coding Agent that turns GitHub issues into PRs autonomously. (4) A PCI-DSS compliant NBFC Co-Lending Platform."
     },
     {
+        id: 'contact',
         keywords: ['contact', 'email', 'hire', 'reach', 'phone', 'connect', 'touch', 'message'],
         answer: "You can reach Akshay at mhaskarakshay1992@gmail.com or call +91 8898910723. Connect on LinkedIn at linkedin.com/in/akshay-mhaskar-30a003160 or check his GitHub at github.com/CelestialCreator."
     },
@@ -74,3 +78,9 @@ export const FAQ_DATA = [
 ]
 
 export const DEFAULT_ANSWER = "I can tell you about Akshay's experience, skills, projects, education, or how to contact him. What would you like to know?"
+
+export function getFaqById(id)
+{
+    const entry = FAQ_DATA.find(e => e.id === id)
+    return entry ? entry.answer : null
+}

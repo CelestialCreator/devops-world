@@ -1,7 +1,7 @@
 import '../../style/axon.css'
 import AxonFallback from './AxonFallback.js'
 import { AXON_SYSTEM_PROMPT } from './axonSystemPrompt.js'
-import { FAQ_DATA, DEFAULT_ANSWER } from './axonFaqData.js'
+import { FAQ_DATA, DEFAULT_ANSWER, getFaqById } from './axonFaqData.js'
 
 export default class AxonChat
 {
@@ -90,6 +90,7 @@ export default class AxonChat
             btn.className = 'axon-quick-btn'
             btn.textContent = label
             btn.dataset.query = `Tell me about Akshay's ${label.toLowerCase()}`
+            btn.dataset.faqId = label.toLowerCase()
             this.$quickActions.appendChild(btn)
         }
 
@@ -146,7 +147,8 @@ export default class AxonChat
             if(btn)
             {
                 this.$input.value = btn.dataset.query
-                this.handleSend()
+                // Preset buttons use hardcoded FAQ looked up by ID (fast, reliable)
+                this.handleSend({ faqId: btn.dataset.faqId })
             }
         })
     }
@@ -188,7 +190,7 @@ export default class AxonChat
         // Show loading state
         this.$loading.classList.add('is-active')
         this.$inputRow.style.display = 'none'
-        this.addMessage("Downloading Axon's brain (~260MB, one-time only)...", 'system')
+        this.addMessage("Downloading Axon's brain (~700MB, one-time only)...", 'system')
 
         // Spawn web worker
         this.worker = new Worker(
@@ -265,7 +267,7 @@ export default class AxonChat
 
     // --- Sending Messages ---
 
-    handleSend()
+    handleSend(options = {})
     {
         const raw = this.$input.value.trim()
         if(!raw || this.isGenerating) return
@@ -292,18 +294,19 @@ export default class AxonChat
             return
         }
 
-        // Try FAQ first for instant high-quality answers
-        const faqResult = this.tryFaq(text)
-        if(faqResult)
+        // Preset buttons: look up FAQ by exact id (fast, reliable, no keyword matching)
+        if(options.faqId)
         {
-            this.streamFaqResponse(faqResult)
+            const faqResult = getFaqById(options.faqId)
+            this.streamFaqResponse(faqResult || DEFAULT_ANSWER)
             return
         }
 
-        // Pure fallback mode (no WebGPU)
+        // Pure fallback mode (no WebGPU / model failed): use FAQ keyword match
         if(this.isFallbackMode)
         {
-            this.streamFaqResponse(DEFAULT_ANSWER)
+            const faqResult = this.tryFaq(text)
+            this.streamFaqResponse(faqResult || DEFAULT_ANSWER)
             return
         }
 
@@ -313,6 +316,7 @@ export default class AxonChat
             return
         }
 
+        // Send free-form text to fine-tuned LLM
         this.generateResponse(text)
     }
 

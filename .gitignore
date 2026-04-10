@@ -8,6 +8,9 @@ static/models/kenney/city-commercial/
 static/models/kenney/city-industrial/
 static/models/kenney/city-suburban/
 
+# Fine-tune workspace (belongs in gpu-lab repo, not this one)
+fine-tune/
+
 # Parcel cache
 .cache
 

@@ -2,7 +2,7 @@ import { pipeline, env, TextStreamer } from '@huggingface/transformers'
 
 env.allowLocalModels = false
 
-const MODEL_ID = 'HuggingFaceTB/SmolLM2-360M-Instruct'
+const MODEL_ID = 'onnx-community/gemma-3-1b-it-ONNX'
 
 let generator = null
 
@@ -72,9 +72,13 @@ self.onmessage = async ({ data }) =>
             })
 
             await generator(data.messages, {
-                max_new_tokens: 80,
-                temperature: 0.3,
-                do_sample: false,
+                max_new_tokens: 160,
+                do_sample: true,
+                temperature: 0.2,
+                top_p: 0.95,
+                top_k: 40,
+                repetition_penalty: 1.15,
+                no_repeat_ngram_size: 4,
                 return_full_text: false,
                 streamer
             })
