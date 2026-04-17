@@ -26,7 +26,7 @@ export default class NetworkSection
         title.updateMatrix()
         this.container.add(title)
 
-        const subtitle = createTextLabel('Square Root Consultancy | 2018-2021', { fontSize: 26, color: '#336655', maxWidth: 7 })
+        const subtitle = createTextLabel('Square Root Consultancy | Nov 2018 - Apr 2021', { fontSize: 26, color: '#336655', maxWidth: 7 })
         subtitle.position.set(this.x, this.y + 6.5, 0.01)
         subtitle.updateMatrix()
         this.container.add(subtitle)
@@ -34,8 +34,8 @@ export default class NetworkSection
         const mainPanel = createInfoPanel(
             'Square Root Consultancy',
             'Founder | Enterprise Networking',
-            'Sold & integrated enterprise networking:\nFortinet, WatchGuard firewalls,\nswitches, access points\n\nDesigned network architectures for SMBs:\nVLAN segmentation, VPN, security policies\n\nDeveloped autonomous drones for\nsurveillance and agriculture applications\n\nAligned IT strategies with business goals',
-            { accentColor: '#009688', worldWidth: 7, height: 420 }
+            'Designed & deployed enterprise network\ninfrastructure for SMBs — Fortinet &\nWatchGuard firewalls, VLAN segmentation,\nsite-to-site VPN, zero-trust access policies\n\nDelivered end-to-end infrastructure\nsolutions across 10+ clients — from\narchitecture planning to production handoff\n\nDeveloped autonomous drones for\nsurveillance and agriculture applications\n\nAligned IT strategies with business goals',
+            { accentColor: '#009688', worldWidth: 7, height: 480 }
         )
         mainPanel.position.set(this.x - 4, this.y + 2, 0.01)
         mainPanel.updateMatrix()
@@ -44,8 +44,8 @@ export default class NetworkSection
         const earlyPanel = createInfoPanel(
             'Earlier Experience',
             'System Admin & IT Support',
-            'Cupshup (SysAdmin, 2021-2023)\nManaged IT infra, Google Workspace\nCloud-first approach\n\nSNDT University (2017)\nWindows servers, campus network\nFirewalls, disaster recovery\n\nEducation:\nB.E. Electrical Engineering - Mumbai Univ\nDiploma Electronics - MSBTE',
-            { accentColor: '#009688', worldWidth: 5, height: 420 }
+            'Cupshup (SysAdmin, Apr 2021 - Feb 2023)\nManaged cloud infra, CI/CD pipelines,\nLinux servers; migrated workloads to\nGoogle Cloud with IAM & networking\nbest practices\n\nSNDT University (Feb - Nov 2017)\nAdministered Windows servers, designed\ncampus network, managed firewalls,\nimplemented disaster recovery\n\nEducation:\nB.E. Electrical, Electronics & Comms\n— Mumbai University\nDiploma Electronics & Telecom — MSBTE',
+            { accentColor: '#009688', worldWidth: 5, height: 500 }
         )
         earlyPanel.position.set(this.x + 5, this.y + 2, 0.01)
         earlyPanel.updateMatrix()

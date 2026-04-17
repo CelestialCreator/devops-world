@@ -33,8 +33,8 @@ export default class FinanceSection
         const panel = createInfoPanel(
             'Mavonic - Fintech & AI Platforms',
             'DevOps Engineer | PCI-DSS Compliance',
-            'Architected scalable cloud infrastructure\nfor Fintech and AI platforms\n\nStreamlined CI/CD with security checks\nfor PCI-DSS regulated environments\n\nEngineered IaC with Terraform, Terragrunt,\nand OpenTofu for reproducible environments\n\nOrchestrated K8s with Crossplane for\nmulti-cloud resource provisioning\n\nImplemented Istio, Linkerd service mesh\nand Emissary Ingress API gateway',
-            { accentColor: '#00C853', worldWidth: 7, height: 450 }
+            'Architected scalable cloud infrastructure\nfor Fintech and AI platforms with rapid\ndeployment capabilities\n\nStreamlined CI/CD pipelines with security\n& compliance checks for PCI-DSS regulated\nfintech environments\n\nEngineered IaC with Terraform, Terragrunt,\nand OpenTofu for reproducible environments\n\nOrchestrated K8s clusters with Crossplane\nfor multi-cloud resource provisioning (POC)\n\nImplemented service mesh (Istio, Linkerd)\nand Emissary Ingress API gateway\n\nChaos engineering & load testing with\nk6 and Locust for resilience validation',
+            { accentColor: '#00C853', worldWidth: 7, height: 520 }
         )
         panel.position.set(this.x - 4, this.y + 2, 0.01)
         panel.updateMatrix()
@@ -42,23 +42,33 @@ export default class FinanceSection
 
         const projectPanel = createInfoPanel(
             'NBFC Co-Lending Platform',
-            'PCI-DSS Compliant | Multi-Tenant',
-            'Architected secure multi-tenant infra\nwith strict data isolation\n\nNetwork segmentation, encryption\nat rest/transit, automated vulnerability\nscanning with Trivy\n\nFull PCI-DSS compliance achieved',
-            { accentColor: '#FFD700', worldWidth: 5 }
+            'AWS → GCP Migration | Platform Eng',
+            'Led cloud-agnostic migration from AWS\nto GCP, architecting multi-cloud infra\nfor an NBFC co-lending platform\n\nDrove platform engineering: enabled\ndeveloper DevOps adoption, new tooling,\nand mentored junior DevOps engineers\n\nCollaborated with Google Cloud partner\nfor credits & implementation; delivered\nper SOW',
+            { accentColor: '#FFD700', worldWidth: 5, height: 450 }
         )
         projectPanel.position.set(this.x + 5, this.y + 2, 0.01)
         projectPanel.updateMatrix()
         this.container.add(projectPanel)
 
         const qaPanel = createInfoPanel(
-            'Zosma-QA Framework',
-            'Playwright | Appium | k6 | AI Agents',
-            'Open-source unified testing framework\nzero-config: npx zosma-qa init\n\nWeb E2E + Mobile + Load testing\nin one CLI\n\nAI-native: planner, generator, healer\nagents for self-healing tests\n\n70-90% cost reduction in browser\ntesting at Mavonic (Q1 2024)',
-            { accentColor: '#00C853', worldWidth: 5 }
+            'LLM-Powered QA Automation',
+            'Playwright + MCP | Q1 2024',
+            'Pioneered LLM-powered QA automation\nframework at Mavonic using Playwright\nand MCP\n\n70-90% cost reduction in browser\ntesting through AI-driven test\ngeneration and self-healing agents\n\nIntegrated into PCI-DSS compliant CI/CD\nfor fintech release pipelines',
+            { accentColor: '#00C853', worldWidth: 5, height: 420 }
         )
         qaPanel.position.set(this.x, this.y - 4, 0.01)
         qaPanel.updateMatrix()
         this.container.add(qaPanel)
+
+        const b2bPanel = createInfoPanel(
+            'PCI-DSS B2B Payment Platform',
+            'Cross-Border | 140+ Currencies',
+            'Implemented PCI-DSS compliant infra\nfor a B2B cross-border payment\nmiddleware platform operating across\n140+ currencies\n\nNetwork segmentation, strong access\ncontrols, encryption at rest / transit\n\nAutomated vulnerability scanning\nwith Trivy across the CI/CD pipeline',
+            { accentColor: '#00C853', worldWidth: 5, height: 420 }
+        )
+        b2bPanel.position.set(this.x - 6, this.y - 4, 0.01)
+        b2bPanel.updateMatrix()
+        this.container.add(b2bPanel)
     }
 
     setObjects()

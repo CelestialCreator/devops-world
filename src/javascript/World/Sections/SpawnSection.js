@@ -35,7 +35,7 @@ export default class SpawnSection
         const aboutPanel = createInfoPanel(
             'About Me',
             'Mumbai, India | github.com/CelestialCreator',
-            'CNCF-native DevOps Engineer passionate about\ncloud-native architectures and AI infrastructure.\n\nDeep expertise in Kubernetes, GitOps, and\nobservability stacks. From bare-metal GPU\nclusters to production cloud deployments.\n\nCurrently focused on autonomous AI agents,\nLLM infrastructure, and edge computing.',
+            'Building cloud-native infrastructure with\nopen-source tools and AI-driven automation.\n\nCNCF-native DevOps Engineer with proven\ntrack record in secure, PCI-DSS compliant\nfintech platforms and GPU-accelerated AI\ninference clusters.\n\nPolyglot technologist — from bare-metal\nhardware to production cloud deployments.\nCurrently focused on autonomous AI agents,\nLLM infrastructure, and edge computing.',
             { accentColor: '#326CE5', worldWidth: 7 }
         )
         aboutPanel.position.set(this.x + 5, this.y - 2, 0.01)

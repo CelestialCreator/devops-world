@@ -37,8 +37,8 @@ export default class TransitSection
         const panel = createInfoPanel(
             'Billeasy - Transit Ticketing',
             'Sole DevOps Contributor | 15L+ Daily Riders',
-            'Scaled infrastructure for 5 metros:\nMumbai, Hyderabad, Pune, Nagpur, Noida\n+ MSRTC, Neeta, Purple inter-city buses\n\n80% egress cost reduction via Traefik\nbehind CloudFront + IaC with OpenTofu\n\nLed GitOps with ArgoCD, built observability\nstack with VictoriaMetrics, Prometheus,\nGrafana, OpenTelemetry\n\nDeveloped AI-powered Log Agent for\nautomated troubleshooting (reduced MTTR)',
-            { accentColor: '#FFD600', worldWidth: 7, height: 450 }
+            'Scaled infrastructure for 5 metros:\nMumbai, Hyderabad, Pune, Nagpur, Noida\n+ MSRTC, Neeta, Purple buses\n\nManaged AFC partners, payment gateways,\nCPaaS (Gupshup, Route Mobile) for\nWhatsApp / SMS messaging\n\n80% egress cost reduction via Traefik\nGateway behind CloudFront + IaC with OpenTofu\n\nLed GitOps with ArgoCD, built observability\nstack (VictoriaMetrics, Prometheus, Grafana,\nOpenTelemetry) and AI-powered Log Agent\n\nBuilt on-prem bare-metal K8s dev cluster\nwith GPU support, exposed via FRP reverse\nproxy and staging ALB',
+            { accentColor: '#FFD600', worldWidth: 7, height: 520 }
         )
         panel.position.set(this.x - 4, this.y + 2, 0.01)
         panel.updateMatrix()

@@ -30,20 +30,20 @@ export default class AILabSection
         this.container.add(subtitle)
 
         const gpuPanel = createInfoPanel(
-            'GPU Bare Metal Home Lab',
-            'K8s 1.35 | NVIDIA | Cilium | 50GB VRAM',
-            '3-GPU cluster on single Debian server:\nRTX 5090 + RTX 3080 + RTX 2070 Super\n\n6 ML projects: LoRA training,\nmusic generation, GRPO reasoning,\nmulti-token prediction (1.8x speedup)\n\nNVIDIA Container Toolkit\nGPU scheduling & device plugin\nvLLM inference serving',
-            { accentColor: '#FF1744', worldWidth: 7, height: 400 }
+            'GPU Bare Metal K8s Cluster',
+            'K8s v1.35 | Debian 13 | 50GB VRAM',
+            'Single-node K8s v1.35 on Debian 13:\nAMD Ryzen 9 5900X (12-core)\n3x NVIDIA GPUs — RTX 5090 (32GB)\n+ RTX 3080 (10GB) + RTX 2070 Super (8GB)\n= 50GB VRAM, 1.9TB NVMe\n\nCilium CNI, NVIDIA Container Toolkit,\nCUDA 12.8, GPU device plugin for\nworkload scheduling\n\nRuns SFT / GRPO training,\nLoRA fine-tuning, Qwen3.5 inference\nvia llama.cpp, ComfyUI workflows\n\nPublished fine-tuned models on\nHugging Face: multi-token prediction\n(3,300+ downloads) & GRPO math reasoning',
+            { accentColor: '#FF1744', worldWidth: 7, height: 540 }
         )
         gpuPanel.position.set(this.x - 4, this.y + 2, 0.01)
         gpuPanel.updateMatrix()
         this.container.add(gpuPanel)
 
         const voicePanel = createInfoPanel(
-            'AI Voice Agent',
-            'LiveKit | Chatterbox TTS | WhatsApp | SIP',
-            'Real-time voice AI agent built on\nLiveKit with WebRTC streaming\n\nMulti-channel: SIP telephony,\nWhatsApp calls, web dashboard\n\nChatterbox Streaming: 23-language TTS\nzero-shot voice cloning\n\nIndic Parler-TTS: 21 Indian languages\n69 voices, emotion support\n\nFull pipeline: STT → LLM → TTS',
-            { accentColor: '#FF1744', worldWidth: 5, height: 450 }
+            'AI-Powered Voice Agent',
+            'Self-Hosted LLM/TTS | K8s | SIP | WhatsApp',
+            'Self-hosted open-source LLM/TTS on\non-premise Kubernetes cluster\n\nMulti-channel: SIP trunking,\nWhatsApp Calling API, web dashboard\n\nLiveKit WebRTC streaming, Chatterbox\nTTS (23-language, zero-shot cloning)\nIndic Parler-TTS (21 Indian languages)\n\nFull pipeline: STT → LLM → TTS\n\nUse cases: automated interviews,\norder processing, customer support triage',
+            { accentColor: '#FF1744', worldWidth: 5, height: 500 }
         )
         voicePanel.position.set(this.x + 5, this.y + 2, 0.01)
         voicePanel.updateMatrix()
